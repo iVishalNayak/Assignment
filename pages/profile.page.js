@@ -12,8 +12,7 @@ class ProfilePage {
   }
 
   async open() {
-    await this.page.getByRole('link', { name: /profile/i }).click();
-  }
+    await this.profileLink.click();  }
 
   async updateName(firstName, lastName) {
     await this.firstNameInput.fill(firstName);
@@ -23,3 +22,4 @@ class ProfilePage {
 }
 
 module.exports = { ProfilePage };
+
