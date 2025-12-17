@@ -1,4 +1,4 @@
-const { expect } = require('@playwright/test');
+        const { expect } = require('@playwright/test');
 
 class HomePage {
   /**
@@ -30,8 +30,7 @@ class HomePage {
   }
 
   async openPopularMake() {
-    await this.page.getByRole('link', { name: /Popular Make/i }).click();
-  }
+    await this.popularMakeLink.click();  }
 
   async openOverallRating() {
     await this.overallRatingLink.click();
@@ -39,3 +38,4 @@ class HomePage {
 }
 
 module.exports = { HomePage };
+
