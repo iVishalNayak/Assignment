@@ -25,8 +25,7 @@ test.describe('Authentication', () => {
 
     await register.registerUser('mismatchUser', 'John', 'Doe', 'Pass123!', 'Pass000!');
 
-    await expect(register.resultAlert).not.toBeEmpty();
-  });
+    await expect(register.resultAlert).toContainText(/(error|success)/i);  });
 
   test('login fails with invalid credentials', async ({ page }) => {
     const home = new HomePage(page);
@@ -41,3 +40,4 @@ test.describe('Authentication', () => {
     // await expect(error).toContainText(/(login|invalid|error)/i);
   });
 });
+
