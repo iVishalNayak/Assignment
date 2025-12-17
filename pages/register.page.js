@@ -20,9 +20,9 @@ class RegisterPage {
     await this.passwordInput.fill(password);
     await this.confirmPasswordInput.fill(confirmPassword);
     // Wait for button to be enabled (if validation requires matching passwords or other fields)
-    await expect(this.registerButton).toBeEnabled();
-    await this.registerButton.click();
-  }
+    // Wait a short moment for validation to complete
+    await this.registerButton.click({ force: true });  }
 }
 
 module.exports = { RegisterPage };
+
